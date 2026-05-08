@@ -17,3 +17,12 @@ def predict(data: Numbers):
         "lag1": None if pd.isna(last_row["lag1"]) else float(last_row["lag1"]),
         "roll3": None if pd.isna(last_row["roll3"]) else float(last_row["roll3"])
     }
+@app.get("/")
+def home():
+    return {"message": "API is working"}
+@app.put("/update")
+def update():
+    return {"message": "Data updated"}
+@app.delete("/delete")
+def delete():
+    return {"message": "Data deleted"}
